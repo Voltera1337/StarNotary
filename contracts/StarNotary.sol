@@ -90,8 +90,8 @@ contract StarNotary is ERC721 {
         else if(msg.sender == token2Owner)
         {
             require(token1Owner != address(0));
-            _transferFrom(msg.sender,token1Owner, _tokenId2);
-            _transferFrom(token1Owner,msg.sender, _tokenId1);
+            _transferFrom(token2Owner,token1Owner, _tokenId2);
+            _transferFrom(token1Owner,token2Owner, _tokenId1);
         }
     }
 
@@ -102,7 +102,7 @@ contract StarNotary is ERC721 {
         if(msg.sender == ownerOf(_tokenId))
         {
             // it is better to use safeTransferFrom than transferFrom
-            safeTransferFrom(msg.sender,_to1,_tokenId);
+            _transferFrom(msg.sender,_to1,_tokenId);
         }
 
     }
