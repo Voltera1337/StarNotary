@@ -49,7 +49,7 @@ const App = {
         const id = document.getElementById("lookId").value;
 
         await lookUptokenIdToStarInfo(id).call().then((name) => {
-            console.log
+            //console.log
             App.setStatus("Star: Id = " + id + ", Name = "+name);
         });
     }
